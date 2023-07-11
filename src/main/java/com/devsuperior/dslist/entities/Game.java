@@ -39,7 +39,7 @@ public class Game {
 		}
 		
 		
-		public Game(Long id, String title, Integer genre, String platform, String imgUrl, String shortDescrition,
+		public Game(Long id, String title, String genre, String platform, String imgUrl, String shortDescrition,
 				String longDescrition) {
 			super();
 			this.id = id;
@@ -72,12 +72,12 @@ public class Game {
 		}
 
 
-		public Integer getGenre() {
+		public String getGenre() {
 			return genre;
 		}
 
 
-		public void setGenre(Integer genre) {
+		public void setGenre(String genre) {
 			this.genre = genre;
 		}
 
