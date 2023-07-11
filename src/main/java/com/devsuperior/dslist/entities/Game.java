@@ -28,10 +28,15 @@ public class Game {
 		@Column(name = "game_year")
 		private Integer year;
 		private String genre;
-		private String platform;
+		private String platforms;
+		private Double score; 
 		private String imgUrl;
-		private String shortDescrition;
-		private String longDescrition;
+		
+		@Column(columnDefinition = "TEXT")
+		private String shortDescription;
+		
+		@Column(columnDefinition = "TEXT")
+		private String longDescription;
 		
 		//O construtor vazio Game() é necessário para fins de mapeamento de entidades.
 		public Game() {
@@ -39,16 +44,18 @@ public class Game {
 		}
 		
 		
-		public Game(Long id, String title, String genre, String platform, String imgUrl, String shortDescrition,
-				String longDescrition) {
+		public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription,
+				String longDescription) {
 			super();
 			this.id = id;
 			this.title = title;
+			this.year = year;
 			this.genre = genre;
-			this.platform = platform;
+			this.platforms = platforms;
+			this.score = score;
 			this.imgUrl = imgUrl;
-			this.shortDescrition = shortDescrition;
-			this.longDescrition = longDescrition;
+			this.shortDescription = shortDescription;
+			this.longDescription = longDescription;
 		}
 
 
@@ -70,6 +77,18 @@ public class Game {
 		public void setTitle(String title) {
 			this.title = title;
 		}
+		
+		
+
+
+		public Integer getYear() {
+			return year;
+		}
+
+
+		public void setYear(Integer year) {
+			this.year = year;
+		}
 
 
 		public String getGenre() {
@@ -82,13 +101,25 @@ public class Game {
 		}
 
 
-		public String getPlatform() {
-			return platform;
+		public String getPlatforms() {
+			return platforms;
 		}
 
 
-		public void setPlatform(String platform) {
-			this.platform = platform;
+		public void setPlatforms(String platforms) {
+			this.platforms = platforms;
+		}
+		
+		
+
+
+		public Double getScore() {
+			return score;
+		}
+
+
+		public void setScore(Double score) {
+			this.score = score;
 		}
 
 
@@ -102,23 +133,23 @@ public class Game {
 		}
 
 
-		public String getShortDescrition() {
-			return shortDescrition;
+		public String getShortDescription() {
+			return shortDescription;
 		}
 
 
-		public void setShortDescrition(String shortDescrition) {
-			this.shortDescrition = shortDescrition;
+		public void setShortDescription(String shortDescription) {
+			this.shortDescription = shortDescription;
 		}
 
 
-		public String getLongDescrition() {
-			return longDescrition;
+		public String getlongDescription() {
+			return longDescription;
 		}
 
 
-		public void setLongDescrition(String longDescrition) {
-			this.longDescrition = longDescrition;
+		public void setlongDescription(String longDescription) {
+			this.longDescription = longDescription;
 		}
 
 		//METODOS DE COMPARAÇÃO DOS GAMES
